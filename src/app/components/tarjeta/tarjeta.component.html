@@ -1,0 +1,9 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">Tema: {{ numero }}</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">{{tema.titulo}}</h5>
+      <p class="card-text">{{tema.contenido}}</p>
+      <button (click)="meGusta()"
+      class="btn btn-primary"><i class="far fa-thumbs-up"></i></button>
+    </div>
+  </div>

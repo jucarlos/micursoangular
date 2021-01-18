@@ -1,0 +1,27 @@
+<div class="animate__animated animate__fadeIn animate__fast">
+  <div class="row mt-3">
+    <div class="card border-primary" style="width: 100%">
+      <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">
+          Hay {{ temario.length }} temas
+        </h6>
+        <p class="card-text text-primary">Me gustan: {{ meGustan }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div *ngFor="let tema of temario; let i = index" class="col-md-4">
+      <!-- <div class="card border-primary mb-3">
+        <div class="card-header">Tema: {{ i + 1 }}</div>
+        <div class="card-body text-primary">
+          <h5 class="card-title">{{ tema.titulo }}</h5>
+          <p class="card-text">{{ tema.contenido }}</p>
+        </div>
+      </div> -->
+
+      <app-tarjeta [tema]="tema" [numero]="i+1"
+      (cambiaMeGusta)="sumaUnLike($event)"></app-tarjeta>
+    </div>
+  </div>
+</div>
