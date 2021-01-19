@@ -5,8 +5,8 @@ export class Usuario {
         public email: string,
         public password: string,
         public img?: string,
-        public cloud?:string,
-        public clouds?:string,
+        public cloud?: string,
+        public clouds?: string,
         public role?: string,
         public google?: boolean,
         // tslint:disable-next-line: variable-name

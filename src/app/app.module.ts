@@ -1,5 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser'; 
 import { NgModule } from '@angular/core';
+
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,11 @@ import { RegistroComponent } from './pages/usuarios/registro/registro.component'
 import { PipesComponent } from './pages/pipes/pipes.component';
 import { AlrevesPipe } from './pipes/alreves.pipe';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalComponent } from './components/modal/modal.component';
+import { DatosUsuarioComponent } from './components/datos-usuario/datos-usuario.component';
+import { FormularioHtmlComponent } from './pages/formularios/formulario-html/formulario-html.component';
+import { FormularioTsComponent } from './pages/formularios/formulario-ts/formulario-ts.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +29,18 @@ import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
     RegistroComponent,
     PipesComponent,
     AlrevesPipe,
-    TarjetaComponent
+    TarjetaComponent,
+    ModalComponent,
+    DatosUsuarioComponent,
+    FormularioHtmlComponent,
+    FormularioTsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

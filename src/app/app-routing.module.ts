@@ -5,6 +5,8 @@ import { DirectivasComponent } from './pages/directivas/directivas.component';
 import { TemarioComponent } from './pages/temario/temario.component';
 import { RegistroComponent } from './pages/usuarios/registro/registro.component';
 import { PipesComponent } from './pages/pipes/pipes.component';
+import { FormularioHtmlComponent } from './pages/formularios/formulario-html/formulario-html.component';
+import { FormularioTsComponent } from './pages/formularios/formulario-ts/formulario-ts.component';
 
 
 const routes: Routes = [
@@ -12,7 +14,12 @@ const routes: Routes = [
   { path: 'directivas', component: DirectivasComponent },
   { path: 'temario', component: TemarioComponent },
   { path: 'pipes', component: PipesComponent },
+  { path: 'fortemplate', component: FormularioHtmlComponent },
+  { path: 'forts', component: FormularioTsComponent },
+
+
   { path: 'registro', component: RegistroComponent },
+
   { path: '**', redirectTo: 'home'}
 ];
 
