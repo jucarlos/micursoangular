@@ -15,7 +15,7 @@ export class TipovehiculoService {
   httpHeaders = new HttpHeaders(
     {
       'Content-Type': 'application/json',
-      token: this.usuarioService.token
+      token: this.usuarioService.token || ''
     },
   );
 

@@ -19,6 +19,7 @@ import { DatosUsuarioComponent } from './components/datos-usuario/datos-usuario.
 import { FormularioHtmlComponent } from './pages/formularios/formulario-html/formulario-html.component';
 import { FormularioTsComponent } from './pages/formularios/formulario-ts/formulario-ts.component';
 import { VehiculosModule } from './pages/vehiculos/vehiculos.module';
+import { ClientesModule } from './pages/clientes/clientes.module';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { VehiculosModule } from './pages/vehiculos/vehiculos.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    VehiculosModule
+    VehiculosModule,
+    ClientesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,9 @@ import { FormularioTsComponent } from './pages/formularios/formulario-ts/formula
 import { TiposVehiculosComponent } from './pages/vehiculos/tipos-vehiculos/tipos-vehiculos.component';
 import { AuthGuard } from './guards/auth.guard';
 import { TipoVehiculoComponent } from './pages/vehiculos/tipo-vehiculo/tipo-vehiculo.component';
+import { ClientesComponent } from './pages/clientes/clientes/clientes.component';
+import { ClienteDetalleComponent } from './pages/clientes/cliente-detalle/cliente-detalle.component';
+import { VehiculosDetalleClienteComponent } from './pages/clientes/vehiculos-detalle-cliente/vehiculos-detalle-cliente.component';
 
 
 const routes: Routes = [
@@ -22,6 +25,9 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'tiposvehiculos', component: TiposVehiculosComponent, canActivate: [AuthGuard] },
   { path: 'tipovehiculo/:id', component: TipoVehiculoComponent, canActivate: [AuthGuard] },
+  { path: 'clientes', component: ClientesComponent },
+  { path: 'cliente/:id', component: ClienteDetalleComponent },
+  { path: 'vehiculo/detalle/:ope/:id', component: VehiculosDetalleClienteComponent },
 
   { path: '**', redirectTo: 'home'}
 ];

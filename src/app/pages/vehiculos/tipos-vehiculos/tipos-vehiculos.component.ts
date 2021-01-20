@@ -72,7 +72,6 @@ export class TiposVehiculosComponent implements OnInit {
             this.cargarTiposVehiculos();
           }
 
-         
         }, error => {
           Swal.fire(
             'Borrado!',
@@ -81,9 +80,9 @@ export class TiposVehiculosComponent implements OnInit {
           )
         });
         return;
-       
+
       }
-    })
+    });
   }
 
 
