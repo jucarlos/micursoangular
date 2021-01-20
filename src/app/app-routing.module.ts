@@ -7,6 +7,9 @@ import { RegistroComponent } from './pages/usuarios/registro/registro.component'
 import { PipesComponent } from './pages/pipes/pipes.component';
 import { FormularioHtmlComponent } from './pages/formularios/formulario-html/formulario-html.component';
 import { FormularioTsComponent } from './pages/formularios/formulario-ts/formulario-ts.component';
+import { TiposVehiculosComponent } from './pages/vehiculos/tipos-vehiculos/tipos-vehiculos.component';
+import { AuthGuard } from './guards/auth.guard';
+import { TipoVehiculoComponent } from './pages/vehiculos/tipo-vehiculo/tipo-vehiculo.component';
 
 
 const routes: Routes = [
@@ -16,9 +19,9 @@ const routes: Routes = [
   { path: 'pipes', component: PipesComponent },
   { path: 'fortemplate', component: FormularioHtmlComponent },
   { path: 'forts', component: FormularioTsComponent },
-
-
   { path: 'registro', component: RegistroComponent },
+  { path: 'tiposvehiculos', component: TiposVehiculosComponent, canActivate: [AuthGuard] },
+  { path: 'tipovehiculo/:id', component: TipoVehiculoComponent, canActivate: [AuthGuard] },
 
   { path: '**', redirectTo: 'home'}
 ];

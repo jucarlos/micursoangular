@@ -55,7 +55,6 @@ export class UsuarioService {
         if ( recuerdame ) {
           this.guardarStorageEmail( data.usuario.email );
        } else  {
-        
          this.borrarStorageEmail();
        }
 
@@ -123,6 +122,7 @@ export class UsuarioService {
     if ( payload != null && payload.usuario.nombre.length > 3 && payload.usuario.nombre === this.usuario.nombre ) {
 
       if ( this.isTokenExpirado( payload.exp )) {
+        this.logout();
         return false;
       }
 
@@ -130,6 +130,7 @@ export class UsuarioService {
       return true;
 
     } else {
+      this.logout();
       return false;
     }
   }

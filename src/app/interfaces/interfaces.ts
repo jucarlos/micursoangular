@@ -4,9 +4,7 @@ export interface Localidad {
     nombre: string;
   }
 
-
-
-  export interface Persona {
+export interface Persona {
     nombre: string;
     email: string;
     recuerdame: boolean;

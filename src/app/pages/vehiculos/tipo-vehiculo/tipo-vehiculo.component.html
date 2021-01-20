@@ -1,0 +1,33 @@
+<div class="card animate__animated animate__fadeIn animate__fast mt-3">
+    <div class="card-header">{{ titulo }}</div>
+        <div class="card-body text-primary">
+           
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <form ngNativeValidate #f="ngForm" (ngSubmit)="guardarTipoVehiculo(f)">
+                    <div class="mb-3">
+                        <label class="mb-2">Tipo de Vehículo</label>
+                        <input 
+                            type="text" 
+                            name="nombre" 
+                            class="form-control"  
+                            placeholder="tipo de vehiculo..."
+                            [(ngModel)]="tipoVehiculo.nombre"
+                            minlength="3"
+                            required
+                            #nombre>
+                            <small class="text-dark">El nombre tiene que tener al menos 3 letras</small>
+                    </div>
+          
+                    <a routerLink="/tiposvehiculos" class="btn btn-secondary me-3">Cancelar</a>
+                    &nbsp;
+                    <button [disabled]="f.invalid || guardando"
+                            type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                            <i class="fa fa-save"></i>
+                            {{ tituloBoton }}
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+    </div>

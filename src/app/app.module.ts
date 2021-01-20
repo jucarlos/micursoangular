@@ -18,6 +18,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { DatosUsuarioComponent } from './components/datos-usuario/datos-usuario.component';
 import { FormularioHtmlComponent } from './pages/formularios/formulario-html/formulario-html.component';
 import { FormularioTsComponent } from './pages/formularios/formulario-ts/formulario-ts.component';
+import { VehiculosModule } from './pages/vehiculos/vehiculos.module';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { FormularioTsComponent } from './pages/formularios/formulario-ts/formula
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    VehiculosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
