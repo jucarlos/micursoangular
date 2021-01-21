@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Cliente } from '../models/cliente';
+import { SubirArchivoService } from './subir-archivo.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class ClienteService {
   );
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private subirArchivoService: SubirArchivoService) { }
 
 
   borrarCliente( id: string ): Observable<any> {
@@ -58,6 +59,10 @@ export class ClienteService {
       return this.http.post( url, cliente, { headers: this.httpHeaders} );
     }
 
+  }
+
+  cambiarImagen( archivo: File, id: string ): Promise<any> {
+    return this.subirArchivoService.subirArchivo( archivo , 'clientes', id );
   }
 
 

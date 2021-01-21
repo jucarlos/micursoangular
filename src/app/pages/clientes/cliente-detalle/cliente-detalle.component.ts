@@ -71,4 +71,49 @@ export class ClienteDetalleComponent implements OnInit {
 
   }
 
+
+
+  seleccionImagen( archivo: File  ): void {
+
+    if ( !archivo ) {
+      this.imagenSubir = null;
+      return;
+    }
+
+    if ( archivo.type.indexOf ( 'image') < 0 ){
+      Swal.fire('Sólo imágenes', 'El archivo no es una imágen válida', 'error');
+      this.imagenSubir = null;
+      return;
+    }
+
+    this.imagenSubir = archivo;
+
+    let reader = new FileReader();
+    let urlImagenTemp = reader.readAsDataURL( archivo );
+    // para leer de forma asíncrola el archivo
+    reader.onloadend = () => this.imagenTemp = reader.result;
+
+  }
+
+  cambiarImagen(): void {
+
+    this.clienteService.cambiarImagen( this.imagenSubir, this.cliente._id )
+    .then ( (resp: any ) => {
+      if ( resp.ok ) {
+        Swal.fire('Imagen actualizada', resp.mensaje, 'success');
+        this.volver();
+      }
+    }).catch ( ( error ) => {
+      Swal.fire('Error', 'Ha habido un error al actualizar la imagen', 'error');
+    });
+
+  }
+
+
+  volver(): void {
+    this.router.navigate(['/cliente', this.cliente._id]);
+  }
+
+
+
 }

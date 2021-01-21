@@ -6,6 +6,7 @@ import { VehiculosClienteComponent } from './vehiculos-cliente/vehiculos-cliente
 import { VehiculosDetalleClienteComponent } from './vehiculos-detalle-cliente/vehiculos-detalle-cliente.component';
 import { AppRoutingModule } from '../../app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { ImagenPipe } from '../../pipes/imagen.pipe';
 
 
 
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     ClientesComponent,
     ClienteDetalleComponent,
     VehiculosClienteComponent,
-    VehiculosDetalleClienteComponent
+    VehiculosDetalleClienteComponent,
+    ImagenPipe
   ],
   imports: [
     CommonModule,

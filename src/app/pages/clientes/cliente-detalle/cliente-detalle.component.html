@@ -76,10 +76,10 @@
         <h4 class="card-title">Foto del cliente</h4>
         <h6 class="card-subtitle"></h6>
 
-        <img class="w150" />
-        <img class="w150" />
+        <img *ngIf="!imagenTemp" [src]="cliente.clouds | imagen:'clientes'" class="w150 mb-2">
+        <img *ngIf="imagenTemp" [src]="imagenTemp" class="w150 mb-2">
 
-        <input type="file" />
+        <input type="file" (change)="seleccionImagen( $event.target.files[0] )">
 
         <br />
         <br />
@@ -87,7 +87,7 @@
         <button
           type="button"
           class="btn btn-block btn-success waves-effect waves-light m-r-10"
-        >
+          (click)="cambiarImagen()" [disabled]="!imagenSubir" >
           <i class="fa fa-save"></i> Actualizar Foto
         </button>
       </div>
