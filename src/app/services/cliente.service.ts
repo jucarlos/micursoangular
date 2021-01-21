@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Cliente } from '../models/cliente';
 import { SubirArchivoService } from './subir-archivo.service';
+import { UsuarioService } from './usuario.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +16,32 @@ export class ClienteService {
   httpHeaders = new HttpHeaders(
     {
       'Content-Type': 'application/json',
-      token: '34234234'
+       token: this.usuarioService.token,
     }
   );
 
 
-  constructor(private http: HttpClient, private subirArchivoService: SubirArchivoService) { }
+  constructor(
+      private http: HttpClient,
+      private subirArchivoService: SubirArchivoService,
+      private usuarioService: UsuarioService) { }
 
+
+
+        // este método tiene que llevar el token
+  buscarClientes( termino: string ): Observable<any> {
+
+    // Si no  lo borro lo añade siempre y a la segunda, da error.
+
+    const url = `${URL_SERVICIOS}/buscar/clientes/${termino}`;
+    return this.http.get( url,  { headers: this.httpHeaders } )
+    .pipe(
+      map ( (resp: any) => {
+        return resp;
+      })
+    );
+
+  }
 
   borrarCliente( id: string ): Observable<any> {
     const url = URL_SERVICIOS + '/cliente' + '/' + id;

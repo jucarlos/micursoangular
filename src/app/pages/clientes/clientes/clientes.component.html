@@ -11,10 +11,14 @@
         <div class="card-body">
           <h6 class="card-title">
             Sistema de búsqueda, sólo para usuarios autenticados
+            <span *ngIf="usuarioService.autenticado">Estás autenticado</span>
+            <span *ngIf="!usuarioService.autenticado">No estás autenticado</span>
           </h6>
 
           <input
-            [disabled]="false"
+            [disabled]="!usuarioService.autenticado"
+            (keyup)="buscarCliente() "
+            [(ngModel)]="termino"
             name="termino"
             type="text"
             class="form-control"
@@ -49,7 +53,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let cliente of clientes; let i = index">
-            <td class="w40 align-middle">{{ i + 1 }}</td>
+            <td class="w40 align-middle">{{ i + 1 + desde }}</td>
             <td class="w150">{{ cliente.nombre }}</td>
             <td class="w100">{{ cliente.identificador }}</td>
             <td class="w150">{{ cliente.email }}</td>
