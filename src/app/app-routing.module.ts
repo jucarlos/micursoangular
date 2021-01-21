@@ -13,6 +13,7 @@ import { TipoVehiculoComponent } from './pages/vehiculos/tipo-vehiculo/tipo-vehi
 import { ClientesComponent } from './pages/clientes/clientes/clientes.component';
 import { ClienteDetalleComponent } from './pages/clientes/cliente-detalle/cliente-detalle.component';
 import { VehiculosDetalleClienteComponent } from './pages/clientes/vehiculos-detalle-cliente/vehiculos-detalle-cliente.component';
+import { AngularMaterialComponent } from './pages/angular-material/angular-material.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,7 @@ const routes: Routes = [
   { path: 'clientes', component: ClientesComponent },
   { path: 'cliente/:id', component: ClienteDetalleComponent },
   { path: 'vehiculo/detalle/:ope/:id', component: VehiculosDetalleClienteComponent },
-
+  { path: 'material', component: AngularMaterialComponent },
   { path: '**', redirectTo: 'home'}
 ];
 

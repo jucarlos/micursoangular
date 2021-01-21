@@ -20,6 +20,13 @@ import { FormularioHtmlComponent } from './pages/formularios/formulario-html/for
 import { FormularioTsComponent } from './pages/formularios/formulario-ts/formulario-ts.component';
 import { VehiculosModule } from './pages/vehiculos/vehiculos.module';
 import { ClientesModule } from './pages/clientes/clientes.module';
+import { AngularMaterialComponent } from './pages/angular-material/angular-material.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +42,8 @@ import { ClientesModule } from './pages/clientes/clientes.module';
     ModalComponent,
     DatosUsuarioComponent,
     FormularioHtmlComponent,
-    FormularioTsComponent
+    FormularioTsComponent,
+    AngularMaterialComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,12 @@ import { ClientesModule } from './pages/clientes/clientes.module';
     ReactiveFormsModule,
     HttpClientModule,
     VehiculosModule,
-    ClientesModule
+    ClientesModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatInputModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
