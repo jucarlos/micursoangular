@@ -3,7 +3,7 @@
 
 
 
-#### Contenido del curso
+#### Contenido de este ejercio
 
 1.	Introducción a TypeScrypt.
 2.	Estructura y programación de aplicaciones angular
@@ -13,6 +13,6 @@
 6.	Formularios en angular
 7.	Aplicación CRUD con peticiones a un backend.
 8.	Preparar aplicación para producción.
-9.	Optimización de aplicación. Módulos y Lazy Load.
+
 
 

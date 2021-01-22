@@ -8,7 +8,10 @@ import { UsuarioService } from '../../services/usuario.service';
 })
 export class DatosUsuarioComponent implements OnInit {
 
-  constructor(public usuarioService: UsuarioService) { }
+
+  constructor(public usuarioService: UsuarioService) {
+      
+   }
 
   ngOnInit(): void {
   }

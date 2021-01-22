@@ -61,15 +61,14 @@ export class FormularioTsComponent implements OnInit {
       ]
     }
     );
-   
+
 
     this.cargarDatosAlFormulario();
-    
     // Nos podemos subscribir a los cambios del mismo formulario.
-    this.cargarListeners()
+    this.cargarListeners();
   }
 
-  cargarListeners() {
+  cargarListeners(): void {
     // Me interesa saber cúando hay algún canmbio.
     // casa vez que el formulario tiene algún cambio
     // this.formulario.valueChanges.subscribe( valor => {
@@ -87,7 +86,7 @@ export class FormularioTsComponent implements OnInit {
     // });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   // creamos un getter para no sobrecargar el html
@@ -101,52 +100,52 @@ export class FormularioTsComponent implements OnInit {
                   }"
   */
 
-  get lenguajes() {
+  get lenguajes(): any {
     return this.formulario.get('lenguajes') as FormArray;
   }
 
-  get provinciaNoValida() {
+  get provinciaNoValida(): any {
     return this.formulario.get('direccion.provincia').invalid && this.formulario.get('direccion.provincia').touched;
   }
 
-  get localidadNoValida() {
+  get localidadNoValida(): any {
     return this.formulario.get('direccion.localidad').invalid && this.formulario.get('direccion.localidad').touched;
   }
 
-  get nombreNoValido() {
+  get nombreNoValido(): any {
     return this.formulario.get('nombre').invalid && this.formulario.get('nombre').touched;
   }
 
-  get nombreValido() {
+  get nombreValido(): any {
     return this.formulario.get('nombre').valid;
   }
 
-  get apellidoNoValido() {
+  get apellidoNoValido(): any {
     return this.formulario.get('apellido').invalid && this.formulario.get('apellido').touched;
   }
 
-  get apellidoValido() {
+  get apellidoValido(): any {
     return this.formulario.get('apellido').valid;
   }
 
 
-  get correoNoValido() {
+  get correoNoValido(): any {
     return this.formulario.get('correo').invalid && this.formulario.get('correo').touched;
   }
 
-  get correoValido() {
+  get correoValido(): any {
     return this.formulario.get('correo').valid;
   }
 
-  get usuarioNoValido() {
+  get usuarioNoValido(): any {
     return this.formulario.get('usuario').invalid && this.formulario.get('usuario').touched;
   }
 
-  get pass1NoValido() {
+  get pass1NoValido(): any {
     return this.formulario.get('password1').invalid && this.formulario.get('password1').touched;
   }
 
-  get pass2NoValido() {
+  get pass2NoValido(): boolean {
 
     const pass1 = this.formulario.get('password1').value;
     const pass2 = this.formulario.get('password2').value;
@@ -159,12 +158,12 @@ export class FormularioTsComponent implements OnInit {
 
 
 
-  cargarDatosAlFormulario() {
+  cargarDatosAlFormulario(): void {
     // Después de crear el formulario, podríamos llenarlo de datos
     // de esta forma.
     // this.formulario.setValue({
     //     nombre: 'Juan Carlos',
-    //     apellido: 'Fenández',
+    //     apellido: 'Fernández',
     //     correo: 'carlos@gmail.com',
     //     password1: [''],
     //     password2: [''],
@@ -188,7 +187,7 @@ export class FormularioTsComponent implements OnInit {
 
 
 
-  validar() {
+  validar(): void {
     console.log(this.formulario);
 
     if (this.formulario.invalid) {
@@ -210,14 +209,14 @@ export class FormularioTsComponent implements OnInit {
 
   }
 
-  agregarLenguaje() {
+  agregarLenguaje(): void {
     this.lenguajes.push(
-      //this.fb.control('Nuevo lenguaje', Validators.required )
+      // this.fb.control('Nuevo lenguaje', Validators.required )
       this.fb.control('Nuevo lenguaje')
-    )
+    );
   }
 
-  borrarLenguaje(i: number) {
+  borrarLenguaje(i: number): void {
     this.lenguajes.removeAt(i);
   }
 
