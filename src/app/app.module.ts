@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser'; 
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -38,6 +38,12 @@ import { FormularioTsComponent } from './pages/formularios/formulario-ts/formula
 import { VehiculosModule } from './pages/vehiculos/vehiculos.module';
 import { ClientesModule } from './pages/clientes/clientes.module';
 
+// Cambiar idioma de la app
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeEs);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +75,11 @@ import { ClientesModule } from './pages/clientes/clientes.module';
     MatInputModule,
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID, useValue: 'es'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
